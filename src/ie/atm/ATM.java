@@ -45,6 +45,12 @@ public class ATM {
 	}
 	// attempt to authenticate user
 	private void authenticateUser(){
+		screen.displayMessage("\nPlease enter your account number: ");
+		int accountNumber = keypad.getInput(); //input account number
+		screen.displayMessage("\nEnter your PIN: ");  //prompt for pin
+		int pin = keypad.getInput(); //input PIN
+		
+		userAuthenticated = bankDatabase.authenticateUser (accountNumber, pin);
 		
 	}
 	
